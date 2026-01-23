@@ -69,7 +69,7 @@
             status.innerText = `Adding... (${remaining.length} left)`;
             remaining[0].childNodes[0].click();
 
-            await smartWait(800); // Turbo Detail Wait
+            await smartWait(300); // Turbo Detail Wait
             if (!isRunning) break;
 
             const back = document.querySelector('[variant="back"]')?.shadowRoot?.querySelector('#back-button') ||
@@ -77,9 +77,9 @@
 
             if (back) {
                 back.click();
-                await smartWait(1500); // Turbo Return Wait
+                await smartWait(500); // Turbo Return Wait
             } else {
-                await smartWait(500);
+                await smartWait(300);
             }
 
             if (!isRunning) break;
@@ -92,5 +92,5 @@
         startBtn.style.color = "#117aca";
     }
 
-    setInterval(createHUD, 1500);
+    setInterval(createHUD, 500);
 })();
